@@ -1,0 +1,19 @@
+﻿@page "/mud-playground"
+@rendermode InteractiveServer
+
+<h3>MudPlayground</h3>
+
+<MudText Typo="Typo.h6">MudBlazor is @Text</MudText>
+<MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="ButtonOnClick">@ButtonText</MudButton>
+
+<button @onclick=ButtonOnClick>Test Click</button>
+
+<MudPaper Class="pa-4">
+    <MudStack Spacing="2">
+        <MudButton OnClick="OnExpandCollapseClick">@(_expanded ? "Collapse" : "Expand")</MudButton>
+        <MudDivider />
+        <MudCollapse Expanded="_expanded">
+            This content is collapsible.
+        </MudCollapse>
+    </MudStack>
+</MudPaper>
