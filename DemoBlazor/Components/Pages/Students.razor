@@ -21,5 +21,26 @@
                 </tr>
             </tbody>
         }
-    }    
+    }
 </table>
+
+<EditForm Model="Form"
+          OnValidSubmit="OnSubmitAsync"
+          FormName="create-student-form">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <label>
+        First Name:
+        <InputText DisplayName="First Name" @bind-Value="Form.FirstName">
+        </InputText>
+    </label>
+
+    <label>
+        Last Name:
+        <InputText DisplayName="Last Name" @bind-Value="Form.LastName">
+        </InputText>
+    </label>
+
+    <button type="submit">Create</button>
+</EditForm>
